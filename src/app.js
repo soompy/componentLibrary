@@ -1,1 +1,1 @@
-console.log('Hello Webpack!');
+var css = require('./app.scss');
