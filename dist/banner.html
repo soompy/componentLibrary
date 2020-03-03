@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UI Library - Banner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="app.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- <script src="jquery-3.4.1.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>UI 라이브러리</h1>
+  <table class="ui-list">
+    <tr>
+      <th>Rolling Banner</th>
+      <td><a href="#rolling">롤링배너</a></td>
+      <th>Rolling Banner</th>
+      <td><a href="#rollingPaging">롤링배너 페이징</a></td>      
+    </tr>
+  </table>
+
+  <hr>
+
+  <!-- 라이브러리 시작 -->
+  <div id="content">
+    <h2 class="ui">1. 롤링배너</h2>
+    <div id="rolling">
+      <ul class="banner">
+        <li>banner1</li>
+        <li>banner2</li>
+        <li>banner3</li>
+      </ul>
+    </div>
+
+    <h2 class="ui">2. 롤링배너 + 페이징</h2>
+    <div id="rollingPaging">
+      <ul class="banner2">
+        <li>banner1</li>
+        <li>banner2</li>
+        <li>banner3</li>
+      </ul>
+      <div class="paging">
+        <a class="active" href=""></a>
+        <a href="#"></a>
+        <a href="#"></a>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="ui.js"></script>
+  <!-- <script src="app.bundle.js"></script> -->
+</body>
+</html>

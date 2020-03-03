@@ -2,57 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Webpack Test</title>
+  <title>UI Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="app.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- <script src="jquery-3.4.1.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="slick/slick.js"></script>
 </head>
 
 <body>
-  <h1>UI 라이브러리</h1>
-  <table class="ui-list">
-    <tr>
-      <th>롤링배너</th>
-      <td><a href="#rolling">롤링배너</a></td>
-    </tr>
-    <tr>
-      <th>팝업창</th>
-      <td><a href="#popup">팝업창</a></td>
-    </tr>
-  </table>
+  <div class="wrap">
+    <h1>UI 라이브러리</h1>
+    <table class="ui-list">
+      <tr>  
+        <th>Tab</th>
+        <td><a href="#swipeTab">스와이프탭</a></td>
+        <td><a href="#contentsTab">콘텐츠탭</a></td>
+      </tr>
+      <tr>
+        <th>Input</th>
+        <td><a href="#checkbox">체크박스</a></td>
+        <td><a href="#radio">라디오</a></td>
+        <td><a href="#radioBtn">라디오버튼</a></td>
+        <td><a href="#switch">스위치</a></td>
+      </tr>
+      <tr>
+        <th>ToolTip</th>
+        <td><a href="#switch">툴팁</a></td>
+      </tr>
+      <tr>
+        <th>List</th>
+        <td><a href="#slideList">슬라이드 리스트</a></td>
+        <td><a href="#scrollList">스크롤 리스트</a></td>
+      </tr>
+      <tr>
+        <th>Accordion</th>
+        <td><a href="#slideList">아코디언</a></td>
+        <td><a href="#scrollList">스크롤 리스트</a></td>
+      </tr>
+    </table>
 
-  <hr>
+    <hr>
 
-  <!-- 라이브러리 시작 -->
-  <div id="content">
-    <h2 class="ui">1. 롤링배너</h2>
-    <div id="rolling">
-      <ul class="banner">
-        <li>banner1</li>
-        <li>banner2</li>
-        <li>banner3</li>
-      </ul>
-      <div class="paging">
-        <a class="active" href=""></a>
-        <a href=""></a>
-        <a href=""></a>
+    <!-- 라이브러리 시작 -->
+    <div id="content">
+      <h2 class="ui">1. 스와이프 탭</h2>
+      <div id="swipeTab">
+        <ul class="tab-menu tab-swipe" style="transform: translateX(0px);">
+          <li class="tab-list-1 active">탭 UI 1</li>
+          <li class="tab-list-2">탭 UI 2</li>
+          <li class="tab-list-3">탭 UI 3</li>
+          <li class="tab-list-4">탭 UI 4</li>
+          <li class="tab-list-5">탭 UI 5</li>
+          <li class="tab-list-6">탭 UI 6</li>
+        </ul>
+        <div class="tab-con tab-list-1 active">1s</div>
+        <div class="tab-con tab-list-2">2s</div>
+        <div class="tab-con tab-list-3">3s</div>
+        <div class="tab-con tab-list-4">4s</div>
+        <div class="tab-con tab-list-5">5s</div>
+        <div class="tab-con tab-list-6">6s</div>
+      </div>
+
+      <h2 class="ui">4. 콘텐츠탭 탭</h2>
+      <div id="contentsTab">
+        
       </div>
     </div>
-  
-    <h2 class="ui">팝업레이어</h2>
-    <div id="popup">
-      dd
-    </div>
-
-
-  
-
   </div>
   
 
-
+  <script src="ui.js"></script>
   <!-- <script src="app.bundle.js"></script> -->
 </body>
 </html>
