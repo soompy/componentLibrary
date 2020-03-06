@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>UI Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- <script src="jquery-3.4.1.min.js"></script> -->
@@ -17,31 +20,33 @@
   <div class="wrap">
     <h1>UI 라이브러리</h1>
     <table class="ui-list">
-      <tr>  
+      <tr>
         <th>Tab</th>
         <td><a href="#swipeTab">스와이프탭</a></td>
         <td><a href="#contentsTab">콘텐츠탭</a></td>
       </tr>
       <tr>
         <th>Input</th>
-        <td><a href="#checkbox">체크박스</a></td>
-        <td><a href="#radio">라디오</a></td>
-        <td><a href="#radioBtn">라디오버튼</a></td>
-        <td><a href="#switch">스위치</a></td>
+        <td><a href="#inputBox">체크박스</a></td>
+        <td><a href="#inputBox">라디오</a></td>
+        <td><a href="#inputBox">라디오버튼</a></td>
+        <td><a href="#inputBox">스위치</a></td>
       </tr>
       <tr>
         <th>ToolTip</th>
-        <td><a href="#switch">툴팁</a></td>
+        <td><a href="#toolTip">툴팁</a></td>
       </tr>
       <tr>
         <th>List</th>
         <td><a href="#slideList">슬라이드 리스트</a></td>
-        <td><a href="#scrollList">스크롤 리스트</a></td>
       </tr>
       <tr>
         <th>Accordion</th>
-        <td><a href="#slideList">아코디언</a></td>
-        <td><a href="#scrollList">스크롤 리스트</a></td>
+        <td><a href="#accordion">아코디언</a></td>
+      </tr>
+      <tr>
+        <th>Popup</th>
+        <td><a href="#popup">팝업</a></td>
       </tr>
     </table>
 
@@ -49,8 +54,8 @@
 
     <!-- 라이브러리 시작 -->
     <div id="content">
-      <h2 class="ui">1. 스와이프 탭</h2>
       <div id="swipeTab">
+        <h2 class="ui">1. 스와이프 탭</h2>
         <ul class="tab-menu tab-swipe" style="transform: translateX(0px);">
           <li class="tab-list-1 active">탭 UI 1</li>
           <li class="tab-list-2">탭 UI 2</li>
@@ -67,15 +72,297 @@
         <div class="tab-con tab-list-6">6s</div>
       </div>
 
-      <h2 class="ui">4. 콘텐츠탭 탭</h2>
+
       <div id="contentsTab">
-        
+        <h2 class="ui">2. 콘텐츠탭 탭</h2>
+        <ul class="tab-menu2 content-tab">
+          <li class="tab2-list active" data-tab="tab1">
+            <span>탭 UI 1</span>
+          </li>
+          <li class="tab2-list" data-tab="tab2">
+            <span>탭 UI 2</span>
+          </li>
+        </ul>
+        <div id="tab1" class="tab-con2 active">1 con</div>
+        <div id="tab2" class="tab-con2">2 con</div>
       </div>
-    </div>
-  </div>
-  
+
+
+      <div id="inputBox">
+        <h2 class="ui">3. Input</h2>
+        <h3>Radio Button</h3>
+        <input type="radio" class="custom-check" id="ex_rd1" name="ex_radio">
+        <label for="ex_rd1"></label>
+        <input type="radio" class="custom-check" id="ex_rd2" name="ex_radio" checked="">
+        <label for="ex_rd2"></label>
+        <br>
+        <h3>Checkbox</h3>
+        <input type="checkbox" class="custom-check" id="chk1">
+        <label for="chk1">선택1</label>
+        <input type="checkbox" class="custom-check" id="chk2">
+        <label for="chk2">선택2</label>
+        <input type="checkbox" class="custom-check" id="chk3">
+        <label for="chk3">선택3</label>
+        <br>
+        <h3>Switch</h3>
+        <div class="switch">
+          <input type="checkbox" id="switch1" class="switch">
+          <label for="switch1"></label>
+        </div>
+        <div class="switch">
+          <input type="checkbox" id="switch2" class="switch" checked="checked">
+          <label for="switch2"></label>
+        </div>
+        <h3>Like Button</h3>
+        <div class="like">
+          <input type="checkbox" class="like-check" id="likeCheckEx">
+          <label for="likeCheck01"></label>
+          <input type="checkbox" class="like-check" id="likeCheckEx" checked="">
+          <label for="likeCheck02"></label>
+        </div>
+      </div>
+
+
+      <div id="toolTip">
+        <h2 class="ui">4. Tooltip</h2>
+        <div class="tooltip-wrap">
+          <div class="tooltip">
+            <span>호버하면 아래쪽에 표시되는 툴팁</span>
+            <div class="tooltip-content up">
+              <p>아래쪽에 나타나는 툴팁</p>
+            </div>
+          </div>
+        </div>
+        <div class="tooltip-wrap">
+          <div class="tooltip">
+            <span>호버하면 위쪽에 표시되는 툴팁 </span>
+            <div class="tooltip-content down">
+              <p>위쪽에 나타나는 툴팁</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="slideList">
+        <h2 class="ui">5. List</h2>
+        <h3>slide list</h3>
+        <div class="autoplay list-wrap">
+          <div class="box">
+            <div class="lst-img">
+              <img alt="리스트이미지" src="images/bt21.jpg">
+            </div>
+            <div class="lst-info">
+              <p class="price"><span class="num txt-primary">11,720</span>만원</p>
+              <p class="lst-name"><span>[name] name</span><b>this product is..</b></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="lst-img">
+              <img alt="리스트이미지" src="images/bt21.jpg">
+            </div>
+            <div class="lst-info">
+              <p class="price"><span class="num txt-primary">11,720</span>만원</p>
+              <p class="lst-name"><span>[name] name</span><b>this product is..</b></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="lst-img">
+              <img alt="리스트이미지" src="images/bt21.jpg">
+            </div>
+            <div class="lst-info">
+              <p class="price"><span class="num txt-primary">11,720</span>만원</p>
+              <p class="lst-name"><span>[name] name</span><b>this product is..</b></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="lst-img">
+              <img alt="리스트이미지" src="images/bt21.jpg">
+            </div>
+            <div class="lst-info">
+              <p class="price"><span class="num txt-primary">11,720</span>만원</p>
+              <p class="lst-name"><span>[name] name</span><b>this product is..</b></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="lst-img">
+              <img alt="리스트이미지" src="images/bt21.jpg">
+            </div>
+            <div class="lst-info">
+              <p class="price"><span class="num txt-primary">11,720</span>만원</p>
+              <p class="lst-name"><span>[name] name</span><b>this product is..</b></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="lst-img">
+              <img alt="리스트이미지" src="images/bt21.jpg">
+            </div>
+            <div class="lst-info">
+              <p class="price"><span class="num txt-primary">11,720</span>만원</p>
+              <p class="lst-name"><span>[name] name</span><b>this product is..</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="accordion">
+        <h2 class="ui">6. Accordion</h2>
+        <h3>accordion</h3>
+        <div class="accordion-list">
+          <a href="javascript:;" class="dropdown up">처음에 열려있는 경우</a>
+          <div class="dropdown-body" style="display: block;">
+            <div class="dropdown-box">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</div>
+          </div>
+          <a href="javascript:;" class="dropdown down">처음에 닫혀있는 경우</a>
+          <div class="dropdown-body">
+            <div class="dropdown-box">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</div>
+          </div>
+          <a href="javascript:;" class="dropdown down">처음에 닫혀있는 경우</a>
+          <div class="dropdown-body">
+            <div class="dropdown-box">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="ui">6. PopUp</h2>
+      <h3>Modal popup</h3>
+      <div id="popup">
+        <p id="modalLayer"><a href="#modalLayer" class="_popup_open">Modal popup</a></p>
+        <p id="fullLayer"><a href="#fullLayer" class="_popup_open">Full popup</a></p>
+      </div>
+    </div><!--content-->
+
+    <!--모달팝업-->
+    <div id="layer" class="dim-layer">
+      <div class="dimBg"></div>
+      <div id="modalLayer" class="pop-layer">
+        <div class="pop-container">
+          <a href="#" id="close" class="_layer-close layer-close-top">
+            <img src="images/times-solid.svg" alt="닫기">
+          </a>
+          <div class="layer-content">
+            <p>popup</p>
+            <p>popup</p>
+            <p>popup</p>
+            <p>popup</p>
+            <p>popup</p>
+            <p>popup</p>
+          </div>
+        </div>
+      </div> 
+    </div><!--dim-layer-->
+
+    <!-- 전체팝업 -->
+    <div id="layer2" class="dim-layer" style="position: fixed; top: 0px; left: 0px;">
+      <div class="dimBg"></div>
+      <div id="fullpage" class="pop-layer fullpage" style="left: 0;top: 0;margin: 0;border-radius: 0">
+          <div class="pop-container">
+              <header class="header popup">
+                  <h1>타이틀</h1>
+                  <div id="close2">
+                      <button class="close-btn _layer-close">
+                        <img src="images/times-solid.svg" alt="닫기" style="width: 3vw;">
+                      </button>
+                  </div>
+              </header>
+              <div class="fullpage-con dealer-ad-popup-con">
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+                  <p>popup</p>
+              </div>
+          </div>
+      </div>
+    </div><!--dim-layer-->
+   
+    
+   
+
+  </div><!--wrap-->
+
 
   <script src="ui.js"></script>
-  <!-- <script src="app.bundle.js"></script> -->
+  <script>
+    $('.autoplay').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });  
+  </script>
+  <script>
+    document.getElementById('modalLayer').onclick = function(){
+      document.getElementById('layer').style.display = "block";
+    }
+    document.getElementById('close').onclick = function(){
+      document.getElementById('layer').style.display = "none";
+    }
+    document.querySelector('.dimBg').onclick = function(){
+      document.getElementById('layer').style.display = "none";
+    }
+  </script>
+  <script>
+    document.getElementById('fullLayer').onclick = function(){
+      document.getElementById('layer2').style.display = "block";
+    }
+    document.getElementById('close2').onclick = function(){
+      document.getElementById('layer2').style.display = "none";
+    }
+    document.querySelector('.dimBg').onclick = function(){
+      document.getElementById('layer2').style.display = "none";
+    }
+  </script>
+
 </body>
+
 </html>

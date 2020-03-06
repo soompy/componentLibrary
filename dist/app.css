@@ -1,5 +1,5 @@
 body {
-    font-size: 14px;
+    font-size: 3.2vw;
 }
 
 .wrap {
@@ -40,8 +40,22 @@ li {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+p {
+  margin: 0;
+}
+
+.txt-primary {
+  color: #339af0;
+}
+
 .ui {
-  font-size: 14px;
+  padding: 1vw;
+  background: #e0e0e0;
 }
 
 /* 1. 롤링배너 */
@@ -137,7 +151,7 @@ li {
   background: pink;
 }
 
-/* 3. 탭메뉴 */
+/* 3. 스와이프 탭메뉴 */
 .tab-menu {
   /* transform: translateX(-12vw); */
   display: flex;
@@ -167,4 +181,323 @@ li {
 
 .tab-con.active {
   display: block;
+}
+
+/* 4. 콘텐츠 탭메뉴 */
+.tab-menu2 {
+  display: flex;
+  border-bottom: 1px solid #edf0fa;
+}
+.tab-menu2 li {
+  width: 50%;
+  padding: 3vw 5vw;
+  text-align: center;
+}
+
+.tab-menu2 li span {
+  position: relative;
+}
+
+.tab-menu2 li.active span:after {
+  position: absolute;
+  left: 0;
+  bottom: -3vw;
+  display: block;
+  clear: both;
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #000;
+}
+
+.tab-con2 {
+  display: none;
+}
+
+.tab-con2.active {
+  display: block;
+}
+
+/* 5. 스위치 */
+.switch {
+  width: 14vw;
+  height: 7.4vw;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16vw;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.switch input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+  border: 1px solid #e1e1e1;
+  -webkit-appearance: none;  
+}
+
+.switch+label {
+  display: block;
+  width: 50%;
+  height: 100%;
+  line-height: 32px;
+  float: left;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.switch+label:before {
+  content: "";
+  display: block;
+  width: 6vw;
+  height: 6vw;
+  background: #fff;
+  border-radius: 10vw;
+  position: absolute;
+  left: 2px;
+  top: 1.1vw;
+  box-shadow: 2px 0 3px 1px #ebebeb;
+  -o-transition: left 100ms ease-in-out;
+  -ms-transition: left 100ms ease-in-out;
+  -moz-transition: left 100ms ease-in-out;
+  -webkit-transition: left 100ms ease-in-out;
+  transition: left 100ms ease-in-out;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);    
+}
+
+.switch input:checked {
+  background: #339af0;
+  border-color: #339af0;
+}
+
+.switch input:checked+label {
+  color: #fff;
+}
+
+.switch:checked+label:before {
+  left: 7.4vw;
+  box-shadow: -2px 0 3px 1px #339af0;
+}
+
+/* 6. Like 버튼 */
+#inputBox .like input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  margin-right: 5vw;
+}
+
+.like-check:after {
+  content: "";
+  display: block;
+  width: 5vw;
+  height: 5vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: visible;
+  background-image: url(images/heart-regular.svg);
+}
+
+.like-check:checked:after {
+  background-image: url(images/heart-solid.svg);
+}
+
+/* 7. 툴팁 */
+.tooltip-wrap {
+  height: 15vw;
+}
+
+.tooltip  {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-content {
+  visibility: hidden;
+  width: max-content;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  background-color: rgba(0,0,0,.7);
+  padding: 2vw 2vw 1.6vw;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: 6vw;
+  left: 0;
+  font-size: 3vw;
+  border-radius: 4px;
+  line-height: 1.4;  
+}
+
+.tooltip .tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: -3.2vw;
+  left: 3vw;
+  border-width: 1.7vw;
+  border-style: solid;
+}
+
+.tooltip-wrap .tooltip-content.up::after {
+  border-color: transparent transparent #4b4b4b transparent;
+}
+.tooltip-wrap .tooltip-content.down {
+  top: -10vw;
+}
+.tooltip-wrap .tooltip-content.down::after {
+  top: 100%;
+  border-color: #4b4b4b transparent transparent transparent;
+}  
+
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+}
+
+
+/* 8. 슬라이드 리스트 */
+.list-wrap .box {
+  border: 1px solid #edf0fa;
+  box-shadow: 0 2px 3px 0px #efefef;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0 5vw;
+}
+
+.lst-img img {
+  width: 100%;
+}
+
+.lst-info {
+  padding: 2vw;
+}
+
+.lst-name span {
+  display: block;
+}
+
+/* 9. 아코디언 */
+.accordion-list a {
+  padding: 2vw;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  background: url(./images/chevron-down-solid.svg) 95% 50% no-repeat;
+  background-size: 3vw;
+}
+
+.dropdown-body {
+  display: none;
+  padding: 3vw 2vw;
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-list a.up {
+  background: url(./images/angle-up-solid.svg) 95% 50% no-repeat;
+  background-size: 3vw;
+}
+
+/* 10. 팝업 */
+#layer, #layer2, #layer3, #layer4 {
+  display: none;
+}
+
+.dim-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.dimBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+
+.pop-layer {
+  display: block;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  z-index: 10;
+  background: #fff;
+  margin-left: -40%;
+  margin-top: -25%;
+  border-radius: 1.5vw;
+}
+
+.pop-container:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.layer-close-top {
+  position: absolute;
+  right: 0;
+  top: -9vw;
+  display: block;
+  margin-left: auto;
+}
+
+.layer-close-top img {
+  width: 3vw;
+  padding: 3vw;
+}
+
+.layer-content {
+  padding: 3vw;
+  
+}
+
+/* -전체팝업 */
+.pop-layer.fullpage {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.fullpage-con {
+  overflow: auto;
+}
+
+.header.popup{
+  display: flex;
+  padding: 3vw;
+}
+
+.header.popup button {
+  background: #fff;
+  border: none;
+}
+
+#close2 {
+  display: flex;
+  align-items: center;
+}
+
+.header.popup h1 {
+  margin: auto;
+}
+
+.fullpage-con {
+  padding: 3vw;
 }
